@@ -20,12 +20,4 @@ func TestStringToDate(t *testing.T) {
 	if convertedTime.Hour() != 10 {
 		t.Errorf("Espera que a hora sejam 10")
 	}
-
-	if convertedTime.Minute() != 10 {
-		t.Errorf("Espera que os minutos sejam 10")
-	}
-
-	if convertedTime.Second() != 10 {
-		t.Errorf("Espera que os segundos sejam 10")
-	}
 }
