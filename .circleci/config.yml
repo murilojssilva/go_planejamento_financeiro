@@ -24,3 +24,8 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+working_directory: /go/src/github.com/murilojssilva/go_planejamento_financeiro
+steps:
+  - checkout
+  - run: go get -v -t -d ./...
+  - run: go test -v ./...
