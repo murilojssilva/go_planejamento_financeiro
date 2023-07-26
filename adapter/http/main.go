@@ -7,6 +7,7 @@ import (
 	"github.com/murilojssilva/go_planejamento_financeiro/adapter/http/transaction"
 )
 
+// Init have the project routes
 func Init() {
 	http.HandleFunc("/transactions", transaction.GetTransactions)
 	http.HandleFunc("/transactions/create", transaction.CreateTransactions)

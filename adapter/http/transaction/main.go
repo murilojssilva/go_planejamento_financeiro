@@ -7,31 +7,34 @@ import (
 	"net/http"
 
 	"github.com/murilojssilva/go_planejamento_financeiro/model/transaction"
+	"github.com/murilojssilva/go_planejamento_financeiro/util"
 )
 
-func GetTransactions (w http.ResponseWriter, r *http.Request) { // visibilidade privada por começar com letra minúscula
+// GetTransactions show all registered transactions
+func GetTransactions(w http.ResponseWriter, r *http.Request) { // visibilidade privada por começar com letra minúscula
 	if r.Method != "GET" {
 		w.WriteHeader(http.StatusHTTPVersionNotSupported)
-		return 
+		return
 	}
 
-	w.Header().Set("Content-type","application/json")
-	
-	var transactions = transaction.Transactions {
+	w.Header().Set("Content-type", "application/json")
+
+	var transactions = transaction.Transactions{
 		transaction.Transaction{
-			Title: "Salário",
-			Amount: 1200,
+			Title:           "Salário",
+			Amount:          1200,
 			TransactionType: 0,
-			CreatedAt: salaryReceived,
+			CreatedAt:       util.StringToTime("2023-03-05T10:10:10"),
 		},
 	}
 	_ = json.NewEncoder(w).Encode(transactions)
 }
 
+// CreateTransactions create a new transaction
 func CreateTransactions(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
 		w.WriteHeader(http.StatusHTTPVersionNotSupported)
-		return 
+		return
 	}
 
 	var res = transaction.Transactions{}

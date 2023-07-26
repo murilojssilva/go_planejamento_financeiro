@@ -3,7 +3,7 @@ package util
 import "testing"
 
 func TestStringToDate(t *testing.T) {
-	var convertedTime = StringToTime("2023-07-26T15:30:26")
+	var convertedTime = StringToTime("2023-07-26T10:10:10")
 
 	if convertedTime.Year() != 2023 {
 		t.Errorf("Espera que o ano seja 2023")
@@ -17,15 +17,15 @@ func TestStringToDate(t *testing.T) {
 		t.Errorf("Espera que o dia seja 26")
 	}
 
-	if convertedTime.Hour() != 15 {
-		t.Errorf("Espera que a hora sejam 15")
+	if convertedTime.Hour() != 10 {
+		t.Errorf("Espera que a hora sejam 10")
 	}
 
-	if convertedTime.Minute() != 30 {
-		t.Errorf("Espera que os minutos sejam 30")
+	if convertedTime.Minute() != 10 {
+		t.Errorf("Espera que os minutos sejam 10")
 	}
 
-	if convertedTime.Second() != 26 {
-		t.Errorf("Espera que os segundos sejam 26")
+	if convertedTime.Second() != 10 {
+		t.Errorf("Espera que os segundos sejam 10")
 	}
 }
